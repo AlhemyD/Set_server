@@ -1,3 +1,6 @@
+# Сервер для игры Set
+Готовый набор функций, отвечающий запросам и возвращающий ответы (всё в формате JSON)
+
 ## Установка
 ### Скачать данные
 
@@ -5,22 +8,32 @@
 
 ### Установка зависимостей
 
-Установить flask с помощью консоли. 
+Запустить консоль. Перейти в папку проекта. При необходимости прописать полный путь (`cd D:/.../.../Папка_Проекта`)
 ```
+cd Папка_Проекта
 pip install flask
 ```
 ## Использование
 
 1. Запуск приложения осуществляется также в консоли
 ```
-python weather.py
+python main_server.py
 ```
-```
-* Serving Flask app 'main_server'
- * Debug mode: on
-         WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
- * Running on http://127.0.0.1:5000
-     Press CTRL+C to quit
-```
-## Заключение
-Ваш сервер работает и вы можете отправлять запросы на него и получать с него же ответы
+2. После чего Вы можете отправлять запросы на локальный адрес http://127.0.0.1:5000/
+Например:
+
+по адресу http://127.0.0.1:5000/user/register
+
+отправляете запрос 
+{
+         "nickname":"username",
+         "password":"userpassword"
+}
+
+в ответ приходит ответ:
+{
+        "success":True,
+        "exception":None,
+        "nickname":username,
+        "accessToken":accessToken
+}
